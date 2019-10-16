@@ -1,3 +1,5 @@
 /node_modules/*
 /src/*
 /scss/*
+yarn-error.log
+.DS_Store
