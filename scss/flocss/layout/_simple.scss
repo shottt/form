@@ -1,0 +1,14 @@
+.l-Simple {
+
+  h3 {
+    color: #333333;
+  }
+  p {
+    color: #333333;
+  }
+  @at-root {
+    .l-Simple__list {
+      padding-left: 0;
+    }
+  }
+}

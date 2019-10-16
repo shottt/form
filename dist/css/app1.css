@@ -1,0 +1,132 @@
+body{
+  background: #f6f5f4;
+  color: #333;
+}
+.section{
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.main{
+  width: 400px;
+  margin: 100px auto;
+}
+.mainTitle{
+  text-align: center;
+  font-size: 3em;
+  color: rgba(175, 47, 47, 0.15);
+}
+.form{
+  text-align: right;
+  margin-bottom: 30px;
+}
+.inputArea{
+  margin-bottom: 15px;
+}
+.inputText{
+  padding: 5px;
+  height: 40px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+}
+::-webkit-input-placeholder {
+  color: #e8e8e8;
+}
+.btn{
+  padding: 5px 30px;
+  background: #000;
+  color: #fff;
+  border: none;
+  text-align: right;
+  margin: 0;
+  font-size: 16px;
+}
+.btn:hover{
+  cursor: pointer;
+}
+.error{
+  color: #E9573E;
+}
+.searchBox{
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e8e8e8;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.searchBox__icon{
+  width: 16px;
+  font-size: 18px;
+  margin-right: 5px;
+  color: #888;
+}
+.searchBox__input{
+  width: calc(100% - 30px);
+  height: 100%;
+  border: none;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+.list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+.list__item{
+  overflow: hidden;
+  padding: 15px 15px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  transition: .5s transform;
+}
+.list__item:last-child{
+  border-bottom: none;
+}
+.list__item:hover{
+  transform: scale(1.02);
+  transition: .5s transform;
+}
+.list__item--done{
+  background: #e5e5e5;
+  color: #888;
+}
+.icon-check{
+  font-size: 25px !important;
+  color: rgba(89, 158, 175, 0.29);
+  vertical-align: middle;
+}
+.icon-square, .icon-check, .icon-sort, .icon-trash{
+  cursor: pointer;
+  transition: .5s transform;
+}
+.icon-square:hover, .icon-check:hover, .icon-sort:hover, .icon-trash:hover{
+  transform: scale(1.2);
+  transition: .5s transform;
+}
+.icon-trash{
+  float: right;
+  top: 4px;
+  position: relative;
+  color: rgba(175, 47, 47, 0.47);
+}
+.icon-square, .icon-check{
+  margin-right: 15px;
+}
+.editText{
+  /*display: none;*/
+  width: 80%;
+  height: 100%;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang='ja'>
+  <head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+  <title>Document</title>
+
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <meta name='description' content='{{ page.description | default: site.description | smartify }}'>
+  <meta name='author' content='{{ site.authors }}'>
+  <meta name='generator' content='Jekyll v{{ jekyll.version }}'>
+  <link href='https://use.fontawesome.com/releases/v5.6.1/css/all.css' rel='stylesheet'>
+  <link rel='stylesheet' href='/dist/css/app1.css'>
+
+<!--
+{% include favicons.html %}
+{% include social.html %}
+-->
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-146052-10', 'getbootstrap.com');
+    ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body id='top'>
+    <!--
+    <a id='skippy' class='sr-only sr-only-focusable' href='#content'></a>
+    <header class='navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar'></header>
+    -->
+    
+    <header class='l-Header'>
+
+      <nav class="navbar navbar-expand-lg c-g-nav">
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <button class="navbar-toggler js-display" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav js-none">
+            <li class="nav-item active cp_link">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item cp_link">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown cp_link">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>     
+      <div class='top-Hero position-relative js-target-scroll'>
+        <a href=''>
+          <h1 class='top-Hero__text'>最高のひと時をあなたへ<br><span><i class='fas fa-search mt-3'></i></span></h1>
+        </a>
+      </div>      
+    </header>
+
+    <div class="main">
+      <h1 class="mainTitle">TODOS</h1>
+    
+      <section class="section">
+        <div id="app1">
+          {{ message }}
+        </div>
+      </section>
+    
+      <section class="section">
+        <div id="app2">
+          <span v-bind:title="message" v-bind:class="classObject">
+            この文字にマウスホバーすると画面を表示した日付が出る
+          </span>
+        </div>
+      </section>
+    
+      <section class="section">
+        <div id="app3">
+          <span v-if="isShow !== fals ">v-ifを使って、domの表示非表示が簡単に出来る。非表示だとDOM自体なくなるので注意！</span>
+        </div>
+      </section>
+    
+      <section class="section">
+        <div id="app4">
+          <ol>
+            <li v-for="todo in todos">
+              {{ todo.text }}
+            </li>
+          </ol>
+        </div>
+      </section>
+    
+      <section class="section">
+        <div id="app5">
+          <p>{{ message }}</p>
+          <button @click="changeMessage">メッセージを変える</button>
+        </div>
+      </section>
+    
+      <section class="section">
+        <div id="app6">
+          <p>{{ message }}</p>
+          <input type="text" v-model="message">
+        </div>
+      </section>
+    
+    </div>
+
+    <footer class='l-Footer u-inner-60'>
+      <ul class='c-f-nav u-align'>
+        <li>
+          <a href=''>
+            <p class="cp_link">Top</p>
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            <p class="cp_link">About</p>
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            <p class="cp_link">Products</p>
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            <p class="cp_link">Concept</p>
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            <p class="cp_link">Access</p>
+          </a>
+        </li>
+        <li>
+          <a href=''>
+            <p class="cp_link">Contact</p>
+          </a>
+        </li>
+      </ul>
+    </footer>
+   <!--
+    <footer class='bd-footer text-muted'></footer>
+-->
+    <!--$('footer').load('scripts.html');-->
+    <script src='/dist/js/jquery-3.3.1.slim.min.js'></script>
+    <script src="/dist/js/bundle.js"></script>
+
+    <script src="/dist/js/fadethis/jquery.js"></script>
+    <script src="/dist/js/fadethis/jquery.fadethis.min.js"></script>
+    <script>$(".js-fadethis").fadeThis();</script>
+
+
+  </body>
+</html>

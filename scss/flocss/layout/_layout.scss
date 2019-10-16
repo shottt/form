@@ -1,0 +1,31 @@
+//レイアウト組
+
+.l-Simple,
+.l-Deep,
+.l-Half {
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+
+.l-Header {
+  overflow: hidden;
+}
+
+.l-Main {
+  overflow: hidden;
+}
+
+.l-Footer {
+  * {
+    color: #333;
+  }
+}
+
+@import "./_simple.scss";
+@import "./_deep.scss";
+@import "./_half.scss";
+@import "./_back.scss";
+@import "./_back-half.scss";
+@import "./_ps.scss";
+@import "./_abs.scss";

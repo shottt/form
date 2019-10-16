@@ -1,0 +1,22 @@
+.l-Abs {
+  
+  li {
+    position: relative;
+    overflow: hidden;
+    max-height: 320px;
+  }
+@at-root {
+  .l-Abs__img {
+    width: 100%;
+
+    img {
+      display: inline-block;
+      width:  100%;
+    }
+  }
+  .l-Abs__detail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+}}

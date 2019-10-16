@@ -1,0 +1,40 @@
+.l-Ps{
+  ul {
+    li:nth-child(odd) {
+      @extend .u-f-r-2;
+      margin: 0;
+      &:before {
+        background-position: left;
+      }
+    } 
+    li:nth-child(even) {
+      @extend .u-f-l-2;
+      //margin: 0;
+      &:before {
+        background-position: right;
+      }
+    } 
+  }
+@at-root {
+  .l-Ps__img{
+    position: relative;
+    
+    &:before {
+      position: absolute;
+      content: "";
+      background: url("../images/hero.jpg") no-repeat;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      //画像による
+      background-size: 50%;
+    }
+
+    @at-root {
+
+    }
+  }
+}}
