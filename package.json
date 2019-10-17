@@ -7,15 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "gx": "npx gulp"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/three": "^0.103.2",
+    "axios": "^0.19.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
+    "querystring": "^0.2.0",
     "three": "^0.109.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0"

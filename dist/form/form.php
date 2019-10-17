@@ -61,12 +61,15 @@
           <p class="text-danger">{{ error_message2 }} </p>
           <textarea name="detail" v-on:keyup="key_up__textarea" v-model="detail_message" name="detail" id="detail" cols="30" class="w-100 text-dark" required placeholder="問い合わせ内容を記入してください"></textarea>
         </div>
+        <input type="hidden" name="csrfToken" :value="csrfToken" value="<?php echo $csrfToken; ?>">
         <button :disabled="buttonFlag" type="submit" class="btn btn-primary">送信する</button>
+        <vue-form>{{ $csrfToken }}</vue-form>
       </form>
     </div>
   </main>
   
   <script src='/dist/js/jquery-3.3.1.slim.min.js'></script>
   <script src="/dist/js/bundle.js"></script>
+
 </body>
 </html>

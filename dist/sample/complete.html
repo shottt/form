@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="お仕事に関するお問い合わせの完了画面です。">
+<meta name="keywords" content="お問い合わせ,バイト,派遣,グッドライフビジネスサポート">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link href="/css/style.css" rel="stylesheet">
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/js/insertCommonParts.js"></script>
+
+<script src="/js/jquery.validationEngine.js"></script>
+<script src="/js/jquery.validationEngine-ja.js"></script>
+
+<script src="/js/common.js"></script>
+<title>お問い合わせ 完了画面 | 株式会社グッドライフビジネスサポート</title>
+</head>
+<body id="contact-complete">
+
+<header class="l-Header">
+</header>
+<script>insertHeader();</script>
+
+<main class="l-Main">
+<article>
+<div class="c-Breadcrumb">
+<ol class="c-Breadcrumb__list l-Container--x">
+<li><a href="/">TOP</a></li>
+<li>お問い合わせ完了</li>
+</ol>
+</div>
+
+<div class="l-Container--x u-section-margin--short">
+<ul class="c-Status-Bar">
+<li>入力</li>
+<li>確認</li>
+<li class="c-Status-Bar__li--active">完了</li>
+</ul>
+</div>
+
+<section class="contact-complete-Block l-Container--x u-section-margin">
+<div class="contact-complete-Block__img">
+<img src="/images/Contact-Form/Contact-img-submit.png" alt="イラスト：オッケー女性">
+</div>
+<h1 class="u-text-green">お問い合わせ<br class="u-sp-only">ありがとうございました</h1>
+<p class="u-mt-20">お問い合わせが完了しました。</p>
+<p>後日、担当者から電話・メールにて<br class="u-sp-only">連絡が入るまで、しばらくお待ちください。</p>
+<p class="u-mt-30 u-mb-50">※担当者からの連絡がない場合については、<br class="u-sp-only">直接お問い合わせください。</p>
+
+<div class="c-Btn-Single-Wrapper">
+<p class="c-Btn--top">
+<a href="/" class="c-Btn__360 u--isGreen-rev">
+<span class="c-Btn__logo">前のページへ戻る</span>
+</a>
+</p>
+</div>
+</section>
+
+</article>
+</main>
+
+<footer class="l-Footer">
+</footer>
+
+<script>
+insertFooter();
+$(function() {
+// バリデートエンジン
+$("#contact-Form").validationEngine({
+autoPositionUpdate: true,
+});
+
+// 戻り遷移時にバリデートを実行
+var isInitValidate = false;
+if (isInitValidate) {
+$('#agree').prop("checked", false);
+$('#name').val("");
+$('#name_yomi').val("");
+$('#email').val("");
+$('#email_confirm').val("");
+('#content').val("");
+$('#contact-Form').validationEngine('validate');
+}
+});
+
+var canSubmit = true;
+// bfcache対策
+if (typeof window.onpageshow == 'undefined') {
+// IE10以下対応
+window.onunload = function(){canSubmit = true;};
+} else {
+// firefox対応
+window.onpageshow = function(){canSubmit = true;};
+}
+var token = "d396391f7aee422e421c72c209b0331b528013a0a9c688caf45780869df7bc1e";
+function formSubmit() {
+// エラー有無の確認と送信可能かを判定
+var $form = $('#contact-Form');
+if ($form.validationEngine('validate') && canSubmit) {
+if (!$('#csrfElement').length) {
+// 存在していない場合は要素を追加する
+$('<input type="hidden" id="csrfElement" name="token" value="' + token + '">').appendTo($form);
+}
+
+canSubmit = false;
+$form.submit();
+}
+}
+
+</script>
+<div class="meas-tag"></div>
+<script>insertMeasTag();</script>
+
+</body>
+</html>

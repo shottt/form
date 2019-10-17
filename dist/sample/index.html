@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="お仕事に関するご質問がありましたら、お気軽にお問い合わせください。">
+<meta name="keywords" content="お問い合わせ,バイト,派遣,グッドライフビジネスサポート">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/validationEngine.jquery.css">
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/js/insertCommonParts.js"></script>
+<script src="/js/jquery.validationEngine.js"></script>
+<script src="/js/jquery.validationEngine-ja.js"></script>
+
+<script src="/js/common.js"></script>
+<title>お問い合わせ 入力画面 | 株式会社グッドライフビジネスサポート</title>
+</head>
+<body id="contact">
+
+<header class="l-Header">
+</header>
+<script>insertHeader();</script>
+
+<main class="l-Main">
+<article>
+<div class="c-Breadcrumb">
+<ol class="c-Breadcrumb__list l-Container--x">
+<li><a href="/">TOP</a></li>
+<li>お問い合わせ</li>
+</ol>
+</div>
+<div class="l-Container--x u-section-margin--short">
+<ul class="c-Status-Bar">
+<li class="c-Status-Bar__li--active">入力</li>
+<li>確認</li>
+<li>完了</li>
+</ul>
+</div>
+
+<section class="l-Container--x u-section-margin">
+<div class="l-Form">
+<h1>お問い合わせフォーム</h1>
+
+<form id="contact-Form" action="<?= URL_CONFIRM ?>" method="POST">
+<p class="l-Form__top-text">お問い合わせ内容を入力後、画面下の確認ボタンを押して下さい。</p>
+<p class="l-Form__title u-border-left--green c-form-label">お名前</p>
+<input name="name" class="validate[required]" id="name" type="text" placeholder="例)山田　太朗" value="<?= s('name') ?>" data-prompt-position="topRight:-100px,15px">
+<input name="name_yomi" class="validate[required, custom[onlyKatakana]]" id="name_yomi" type="text" placeholder="例)ヤマダ　タロウ" value="<?= s('name_yomi') ?>" data-prompt-position="topRight:-100px,25px">
+
+<p class="l-Form__title u-border-left--green c-form-label">電話番号</p>
+<p class="u-ml-15">※電話番号はハイフンなしで入力してください。</p>
+<input name="tel" class="validate[required, custom[decimal], maxSize[15]]" id="tel" type="tel" placeholder="例)09000000000" value="<?= s('tel') ?>" data-prompt-position="bottomRight:-100px,-15px">
+
+<p class="l-Form__title u-border-left--green c-form-label">メールアドレス</p>
+<p class="u-ml-15">※半角英数 256文字まで</p>
+<input name="email" class="validate[required, custom[email], maxSize[256]]" id="email" type="email" placeholder="例)example@glbs.co.jp" value="<?= s('email') ?>" data-prompt-position="topRight:-100px,15px">
+
+<div class="u-mt-10" style="color: #666666;">ドメイン指定受信の設定をされている方は「@glbs.co.jp」を受信可能に設定ください</div>
+
+<p class="l-Form__title u-border-left--green c-form-label">お住まいの都道府県</p>
+<select name="address" id="" class="validate[required]" data-prompt-position="bottomRight:0px,0px">
+<option value="">選択してください</option>
+<?= $addressOptions ?>
+</select>
+
+<p class="l-Form__title u-border-left--green c-form-label">お問い合わせ内容</p>
+<p class="u-ml-15">※全角1000文字まで</p>
+<textarea name="content" class="validate[required, maxSize[1000]]" id="content" data-prompt-position="topRight:-100px,15px"><?= s('content') ?></textarea>
+
+<h2 class="l-Form__title u-border-left--green u-mt-30 u-mb-10">個人情報の取扱いに<br class="u-sp-only">関して</h2>
+<div class="l-Form__privacy">
+<ul>
+<li>
+個人情報の取扱いについて<br>
+<br>
+株式会社グッドライフビジネスサポート<br>
+<br>
+<span>代表取締役　脇本　和好</span><br>
+<br>
+株式会社グッドライフビジネスサポート（以下「当社」といいます）は、人材サービス企業として、果たすべき重要な企業責任を認識し、個人情報に関する法令及びその他の規範に基づき、次の通り「個人情報保護方針」を制定します。<br>
+<br>
+当社の役員、従業員の全てが、この「個人情報保護方針」を理解し、個人情報の保護に対して努力を続けてまいります。<br>
+<br>
+当社は、個人情報の取得・利用に際して、利用目的を明確にし、本人同意を得た上で、利用目的達成の範囲で適法かつ公正な手段によって取得・利用を行います。<br>
+また、利用目的の範囲を超えた個人情報の取扱いを行わないために必要な対策を講じます。<br>
+<br>
+当社が保有している個人情報は、本人の同意を得ずに目的外利用、第三者への提供・開示は行いません。<br>
+<br>
+「個人情報の保護に関する法律」、及びその他の関連法令等を特定し、それらを遵守します。<br>
+<br>
+業務の特性、及び取り扱う個人情報の特性、ならびにその量などを考慮し、適正な個人情報の取扱いを行うよう努力します。<br>
+<br>
+取り扱う個人データの漏洩、滅失又は毀損の防止、その他個人データの安全管理のために必要かつ適切な情報セキュリティ対策を講じます。<br>
+<br>
+個人情報保護のための内部管理体制(コンプライアンスプログラム)の継続的な改善を行います。<br>
+ご提出頂いた個人情報に関する苦情、相談、及びその他のお問い合わせに、適切かつ迅速に対応いたします。<br>
+</li>
+<li>
+当社が取得する個人情報の利用目的は以下の通りです。<br>
+[開示対象個人情報の利用目的]
+</li>
+<li>
+1. 労働者派遣事業、有料職業紹介事業における契約締結、その他業務上必要な手続きのため
+</li>
+<li>
+2. 雇用管理及び災害等の緊急事態が発生した際の連絡のため
+</li>
+<li>
+3. 当社が実施する各種アンケート、キャンペーン、イベント及び福利厚生等のご案内のため
+</li>
+<li>
+4. 当社に対するご意見、お問い合わせへの回答のため
+</li>
+<li>
+5. 当社の登録会の案内、予約及び登録手続き並びに登録者への仕事紹介のため
+</li>
+<li>
+6. 当社の求人に応募された方の選考及び採用並びにこれらに関する連絡のため
+</li>
+<li>
+[直接書面以外で取得する個人情報とその利用目的]<br>
+求人会社から取得する応募者の個人情報は当社が採用選考に利用するため
+</li>
+</ul>
+</div>
+
+<div class="l-Form__agree">
+<div class="l-Form__agree-inner">
+<input name="agree" class="validate[required]" type="checkbox" id="agree" value="false" data-prompt-position="topRight:0px,40px">
+<label for="agree">上記の内容について同意する</label>
+</div>
+</div>
+<div class="c-Btn-Single-Wrapper">
+<input type="hidden" name="token" value="<?= s('token') ?>">
+<button type="button" class="c-Btn--next-right " onclick="formSubmit();" style="background: none;border: none;">
+<p class="c-Btn__360 u--isGreen">
+<span class="c-Btn__logo">入力内容を確認する</span>
+</p>
+</button>
+
+</div>
+</form>
+</div>
+</section>
+</article>
+</main>
+
+<footer class="l-Footer">
+</footer>
+
+<script>
+insertFooter();
+
+var canSubmit = true;
+
+// bfcache対策
+function pageInit() {
+canSubmit = true;
+}
+if (typeof window.onpageshow == 'undefined') {
+// IE10以下対応
+window.onunload = function(){};
+window.onload = function(){
+pageInit();
+};
+} else {
+// firefox対応
+window.onpageshow = function(){
+pageInit();
+};
+}
+$(function() {
+// バリデートエンジン
+$("#contact-Form").validationEngine({
+autoPositionUpdate: true,
+//scrollOffset: 260
+});
+
+// 戻り遷移時にバリデートを実行
+//var isInitValidate = <?= $isInitValidate ? 'true' : 'false' ?>;
+var isInitValidate = false;
+if (isInitValidate) {
+$('#contact-Form').validationEngine('validate');
+}
+});
+
+function formSubmit() {
+// エラー有無の確認と送信可能かを判定
+var $form = $('#contact-Form');
+if ($form.validationEngine('validate') && canSubmit) {
+canSubmit = false;
+$form.submit();
+}
+}
+
+</script>
+
+<div class="meas-tag"></div>
+<script>insertMeasTag();</script>
+
+</body>
+</html>
