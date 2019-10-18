@@ -8,7 +8,8 @@ session_start();
 session_regenerate_id();
 //global $csrfToken;
 
-if (empty($_POST)) {
+
+if (empty($_GET)) {
   //安全安心なトークンを作成(32桁数)
   $TOKEN_LENGTH = 16;
   $tokenByte = openssl_random_pseudo_bytes($TOKEN_LENGTH);
@@ -19,25 +20,28 @@ if (empty($_POST)) {
 }
 //Axios通信
 // 送信ボタンで POST送信されていた場合
-if (!empty($_POST)) {
-  $csrfToken = $_POST["csrfToken"];
+if (!empty($_GET)) {
+  $csrfToken = $_GET["csrfToken"];
   // postされたtokenがセッションに保存された値と同じか確認
-  if((isset($_SESSION['csrfToken'])) &&  $_POST["csrfToken"] === $_SESSION['csrfToken']){
+  if((isset($_SESSION['csrfToken'])) &&  $_GET["csrfToken"] === $_SESSION['csrfToken']){
 
     // 変数にユーザー情報を格納（htmlspecialcharでXSS対策）
-    $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
-    $detail = htmlspecialchars($_POST['detail'], ENT_QUOTES);
+    $email = htmlspecialchars($_GET['email'], ENT_QUOTES);
+    $detail = htmlspecialchars($_GET['detail'], ENT_QUOTES);
+
+
     $_SESSION["sent"] = true;
   // バリデーション処理
    // DB接続処理（ここにプリペアードステートメントを入れることでSQLインジェクション対策になる？）
    //なります。仲林
-   require('./form.php');
-   exit;
+   //require('./form.php');
+   //exit;
 
   } else{
     // 不正な処理
     echo '不正なリクエストです';
-    return;
+    require('/dist/form/form.php');
+    exit;
   }
   
   //JavScriptに返す
@@ -50,8 +54,7 @@ if (!empty($_POST)) {
   
 }
 
-if (empty($_POST)) {
-  //Html　読み込み
-  require('./form.php');
-  exit;
-}
+
+//Html　読み込み
+require('./form.php');
+exit;

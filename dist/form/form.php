@@ -48,7 +48,7 @@
       </div>
     </section>
     <div class="container" id="vue-form">
-      <form action="" class="w-50 mx-auto" method="POST">
+      <form action="" class="w-50 mx-auto" method="GET">
         <div class="form-group">
           <label class="text-light" for="mail">Eメールアドレス</label>
           <input name="email" type="text" class="form-control" id="mail" placeholder="Eメールアドレス"　required v-model="email">
@@ -61,12 +61,16 @@
           <p class="text-danger">{{ error_message2 }} </p>
           <textarea name="detail" v-on:keyup="key_up__textarea" v-model="detail_message" name="detail" id="detail" cols="30" class="w-100 text-dark" required placeholder="問い合わせ内容を記入してください"></textarea>
         </div>
+        <div class="form-grop py-4">
+          <input type="file" name="data_file" value="data_file">
+        </div>
         <input type="hidden" name="csrfToken" value="<?php echo $csrfToken ?>">
+
         <button :disabled="buttonFlag" type="submit" class="btn btn-primary">送信する</button>
       </form>
     </div>
     <div class="contaienr">
-      <p><?php echo  $_SESSION["sent"] === true?  "送信しました。" : "" ; ?></p>
+      <p><?php echo  $_SESSION["sent"] === true?  "送信しました。" : "" ;   $_SESSION["sent"] = null;?></p>
     </div>
   </main>
   
