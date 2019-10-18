@@ -20,17 +20,19 @@ if (empty($_POST)) {
 //Axios通信
 // 送信ボタンで POST送信されていた場合
 if (!empty($_POST)) {
-
+  $csrfToken = $_POST["csrfToken"];
   // postされたtokenがセッションに保存された値と同じか確認
-  if(isset($_SESSION['csrfToken']) ){
+  if((isset($_SESSION['csrfToken'])) &&  $_POST["csrfToken"] === $_SESSION['csrfToken']){
 
     // 変数にユーザー情報を格納（htmlspecialcharでXSS対策）
     $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
     $detail = htmlspecialchars($_POST['detail'], ENT_QUOTES);
-
+    $_SESSION["sent"] = true;
   // バリデーション処理
    // DB接続処理（ここにプリペアードステートメントを入れることでSQLインジェクション対策になる？）
    //なります。仲林
+   require('./form.php');
+   exit;
 
   } else{
     // 不正な処理
@@ -39,16 +41,17 @@ if (!empty($_POST)) {
   }
   
   //JavScriptに返す
+  /*
   echo json_encode(array(
     'code' => 111,
     'name' => 'name' 
-  ));
+  ));*/
 
-  return;
-  exit;
+  
 }
 
 if (empty($_POST)) {
   //Html　読み込み
   require('./form.php');
+  exit;
 }
