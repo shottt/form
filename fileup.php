@@ -25,7 +25,7 @@ if (! empty($_FILES['userfile']['tmp_name'])) {
   <title>Document</title>
 </head>
 <body>
-  <form action='' method='POST' enctype='multipart/form-data'>
+  <form action='' method='get' enctype='multipart/form-data'>
     <input type='file' name='userfile'/>
     <input type='submit' value='upload'/>
   </form>

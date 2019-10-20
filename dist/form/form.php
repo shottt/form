@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg text-center">
       <a class="navbar-brand text-light" href="#">Navbar</a>
 
-      <button class="navbar-toggler js-display" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler js-display" type="button" data-toggle="collapse" data-tarPOST="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
     
@@ -48,7 +48,7 @@
       </div>
     </section>
     <div class="container" id="vue-form">
-      <form action="" class="w-50 mx-auto" method="GET">
+      <form action="" class="w-50 mx-auto" method="POST" enctype='multipart/form-data'>
         <div class="form-group">
           <label class="text-light" for="mail">Eメールアドレス</label>
           <input name="email" type="text" class="form-control" id="mail" placeholder="Eメールアドレス"　required v-model="email">
@@ -64,16 +64,14 @@
         <div class="form-grop py-4">
           <input type="file" name="data_file" value="data_file">
         </div>
-        <input type="hidden" name="csrfToken" value="<?php echo $csrfToken ?>">
+
+        <input type="hidden" name="csrfToken" value="<?php echo htmlspecialchars($csrfToken); ?>">
 
         <button :disabled="buttonFlag" type="submit" class="btn btn-primary">送信する</button>
       </form>
     </div>
-    <div class="contaienr">
-      <p><?php echo  $_SESSION["sent"] === true?  "送信しました。" : "" ;   $_SESSION["sent"] = null;?></p>
-    </div>
   </main>
-  
+  <div><?php echo $_POST["detail"];?></div>
   <script src='/dist/js/jquery-3.3.1.slim.min.js'></script>
   <script src="/dist/js/bundle.js"></script>
 

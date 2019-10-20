@@ -1,8 +1,8 @@
 <?php 
 
-
-
-
+//HTTPリスポンス
+//http://localhost:8888/dist/form/index.php/%0d%0aSet-Cookie:%20PHPSESSID=ASYOULIKE;max-age=10000000;path=/?dopost=1
+//header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
 //echo "<pre>";
 //外部コマンド攻撃
 
