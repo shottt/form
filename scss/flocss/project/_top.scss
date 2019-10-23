@@ -1,0 +1,131 @@
+#top {
+  section:not(.top-About) {
+    li {
+      //margin-top: 60px;
+    }
+  }
+  h2 {
+     color: #333;
+  }
+}
+
+.top-Affinity,.top-Solution,.Portfolio-List {
+  h3,h4,p {
+    color: #fff;
+
+  }
+}
+.top-Problem, .Portfolio-List, .top-Form {
+  h3,h4,p,label,input {
+    color: #333;
+  }
+}
+
+
+.top-Hero {
+
+  background: url("../images/hero.jpg") center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 40vh;
+
+  @include u-md {
+    height: 100vh;
+  }
+  
+  &:before {
+    content: "";
+    @extend .u-cover;
+  }
+
+  i {
+    font-size: 70%;
+    @include u-md {
+      font-size: 50%;
+      transition: all .2s;
+    }
+  }
+
+  a:hover{
+    h1 span i {
+      @include u-md {
+        font-size: 70%;
+        transition: all .2s;
+      }
+  }
+
+  @at-root {
+    .top-Hero__text {
+      text-align: center;
+      transform: translateY(20vh);
+      @include u-md {
+        transform: translateY(50vh);
+      }
+    }
+  }}
+}
+
+
+.top-Problem {
+
+@at-root {
+  .top-Problem__img {
+    @include u-md {
+     background: #DBDBDB;
+    }
+    img {
+      @include u-md {
+        padding-top: 10%;
+      }
+    }
+  }
+  .top-Problem__detail {
+    top: 10%;
+  }
+}}
+
+.top-Affinity {
+}
+.top-Affinity__img {
+
+}
+
+.top-Solution__img {
+  
+  position: relative;
+
+  @include u-sm-max {
+    background-size: cover;
+  }
+}
+
+.Portfolio-List {
+  img {
+    @include u-md-max {
+      max-height: 200px;
+    }
+  }
+}
+.Portfolio-List__back {
+  background: #DBDBDB;
+  padding: 40px;
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity: 1;
+  }
+
+  @include u-sm-max {
+    padding: 60px 0;
+  }
+
+
+  @include u-sm-max {
+    .card {
+      
+    }
+    img {
+      max-height: 200px;
+    }
+  }
+}

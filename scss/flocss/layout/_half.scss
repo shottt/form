@@ -1,0 +1,45 @@
+.l-Half {
+
+  li {
+    @include u-md {
+      height: 300px;//調整必要
+      overflow: hidden;   
+    } 
+  }
+
+  @include u-md {
+    li:nth-child(odd) {
+      .l-Half__img {
+        padding-right: 0;
+      }
+      .l-Half__detail {
+        padding-left: 0;
+      }
+    }
+
+    li:nth-child(even) {
+      flex-direction: row-reverse;
+      .l-Half__img {
+        padding-left: 0;
+      }
+      .l-Half__detail {
+        padding-right: 0;
+      }
+    }
+  }
+@at-root {
+
+  .l-Half__img {
+    height: 100%;
+    
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .l-Half__detail {
+    height: 100%;
+  }
+  
+}}

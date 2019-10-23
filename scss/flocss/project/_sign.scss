@@ -1,0 +1,23 @@
+#sign, #sign-regi {
+  label {
+    margin-bottom: 0;
+  }
+}
+.sign-Form {
+  input {
+    border: 0;
+    border-bottom: solid 1px $white-4;
+    text-align: center;
+    width: 100%;
+
+    &::placeholder {
+      color: $white-2;
+    }
+  }
+}
+.sign-To-Register {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+}
