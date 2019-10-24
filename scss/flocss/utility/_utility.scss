@@ -1,4 +1,4 @@
-@import "./_text.scss";
+
 /*=====================
     汎用
 =======================*/
@@ -185,11 +185,36 @@ display: none;
   
 }
 @for $i from 0 through 20 {
+
+  .u-pt-#{$i * 10} {
+    padding-top: #{$i * 10 + "px"};
+  }
+
+  .u-pb-#{$i * 10} {
+    padding-bottom: #{$i * 10 + "px"};
+  }
+
+  .u-pl-#{$i * 10} {
+    padding-left: #{$i * 10 + "px"};
+  }
+
+  .u-pr-#{$i * 10} {
+    padding-right: #{$i * 10 + "px"};
+  }
+
+
   .u-mt-#{$i * 10} {
     margin-top: #{$i * 10 + "px"};
   }
   .u-mb-#{$i * 10} {
     margin-bottom: #{$i * 10 + "px"};
+  }
+
+  .u-ml-#{$i * 10} {
+    margin-left: #{$i * 10 + "px"};
+  }
+  .u-mr-#{$i * 10} {
+    margin-right: #{$i * 10 + "px"};
   }
 }
 
@@ -394,3 +419,7 @@ display: none;
 /*=====================
   ページごとのフォント
 =======================*/
+@import "./_text.scss";
+@import "./icon";
+@import "./border";
+@import "./card";

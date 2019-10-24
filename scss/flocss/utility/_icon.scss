@@ -1,0 +1,26 @@
+.u-down-arrow:after {
+  content: "";
+  background: url(/dist/images/down-arrow.png) no-repeat center;
+  display: inline-block;
+  width: 12px;
+  height: 7px;
+  margin-left: 4px;
+}
+
+
+.c-right-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 20px;
+  width: 20px;
+}
+.c-left-icon {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 20px;
+  width: 20px;
+}
