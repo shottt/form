@@ -19,7 +19,7 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "querystring": "^0.2.0",
-    "three": "^0.109.0",
+    "three": "^0.137.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.1.0"
   },
